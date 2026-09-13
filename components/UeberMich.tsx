@@ -40,7 +40,7 @@ export default function UeberMich() {
             src="/fotos/bank-stadt.jpg"
             alt="Nico in der Stadt"
             className={s.photo}
-            style={{ objectPosition: "center 25%" }}
+            style={{ objectPosition: "center 42%" }}
           />
         </div>
 

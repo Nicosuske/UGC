@@ -8,13 +8,13 @@ import s from "./WarumIch.module.css";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const leftPhotos = [
-  { src: "/fotos/wandern-aufstieg.jpg", alt: "Nico beim Aufstieg",      pos: "center 18%" },
+  { src: "/fotos/wandern-aufstieg.jpg", alt: "Nico beim Aufstieg",       pos: "center 62%" },
   { src: "/fotos/wurzel.jpg",           alt: "Nico an einer Baumwurzel", pos: "center 22%" },
   { src: "/fotos/zelt-see.jpg",         alt: "Nico am Zelt am See",      pos: "center 35%" },
 ];
 
 const rightPhotos = [
-  { src: "/fotos/kiefernwald-koda.jpg", alt: "Nico mit Koda im Kiefernwald", pos: "center 20%" },
+  { src: "/fotos/kiefernwald-koda.jpg", alt: "Nico mit Koda im Kiefernwald",    pos: "center 60%" },
   { src: "/fotos/rucksack-huegel.jpg",  alt: "Nico mit Rucksack auf dem Hügel", pos: "center 15%" },
   { src: "/fotos/gipfel-stadt.jpg",     alt: "Nico mit Blick über die Stadt",   pos: "center 25%" },
 ];
