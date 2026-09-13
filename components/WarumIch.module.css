@@ -4,7 +4,7 @@
   padding: 96px 0;
 }
 
-/* ── Desktop: 3-column (photos | text | photos) ── */
+/* ── Desktop: 3-column ── */
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1fr);
@@ -12,27 +12,27 @@
   align-items: start;
 }
 
-.photoCol {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
+.photoCol { display: flex; flex-direction: column; gap: 14px; }
 .left  { padding-left: 24px; }
 .right { padding-right: 24px; }
 
-/* Desktop photos: fixed height so they don't tower over the text */
+/* Desktop: fixed height, varied widths + offsets for stagger — object-position in TSX */
 .photo {
   width: 100%;
-  height: 190px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-/* Subtle size variety on desktop */
-.left .photo:nth-child(2)  { width: 84%; margin-left: auto; }
-.right .photo:nth-child(1) { width: 72%; margin-left: auto; margin-top: 20px; }
-.right .photo:nth-child(3) { width: 88%; margin-left: auto; }
+/* Left column stagger */
+.left .photo:nth-child(1) { width: 92%; }
+.left .photo:nth-child(2) { width: 74%; margin-left: auto; }
+.left .photo:nth-child(3) { width: 88%; margin-left: 6px; }
+
+/* Right column stagger — first photo drops down to create visual rhythm */
+.right .photo:nth-child(1) { width: 70%; margin-left: auto; margin-top: 40px; }
+.right .photo:nth-child(2) { width: 90%; }
+.right .photo:nth-child(3) { width: 76%; margin-left: auto; }
 
 .textCol { padding: 0 12px; }
 
@@ -49,8 +49,8 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 19px;
+  line-height: 1.65;
   text-align: center;
 }
 
@@ -77,39 +77,30 @@
 }
 .btn:hover { background: var(--forest); transform: scale(1.02); }
 
-/* ── Tablet / Mobile: text full-width on top, 2-col photo grid below ── */
+/* ── Mobile: text full-width top, 2-col photo grid below ── */
 @media (max-width: 1100px) {
   .grid {
     grid-template-columns: 1fr 1fr;
     padding: 0 16px;
     gap: 12px;
   }
-
-  /* text spans both columns and sits above the photos */
   .textCol {
     grid-column: 1 / -1;
     order: -1;
     padding: 0;
   }
-
-  /* each photo column occupies one grid cell and stacks vertically */
-  .photoCol {
-    flex-direction: column;
-    gap: 12px;
-    padding: 0 !important;
-  }
-
-  /* portrait aspect-ratio on mobile so photos feel like the screenshot */
+  .photoCol { flex-direction: column; gap: 12px; padding: 0 !important; }
   .photo {
     width: 100% !important;
     height: auto !important;
     aspect-ratio: 3/4;
     margin: 0 !important;
   }
-
-  /* reset desktop nth-child offsets */
+  .left .photo:nth-child(1),
   .left .photo:nth-child(2),
+  .left .photo:nth-child(3),
   .right .photo:nth-child(1),
+  .right .photo:nth-child(2),
   .right .photo:nth-child(3) {
     width: 100% !important;
     margin: 0 !important;

@@ -8,15 +8,15 @@ import s from "./WarumIch.module.css";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const leftPhotos = [
-  { src: "/fotos/wandern-aufstieg.jpg", alt: "Nico beim Aufstieg" },
-  { src: "/fotos/wurzel.jpg", alt: "Nico an einer Baumwurzel" },
-  { src: "/fotos/zelt-see.jpg", alt: "Nico am Zelt am See" },
+  { src: "/fotos/wandern-aufstieg.jpg", alt: "Nico beim Aufstieg",      pos: "center 18%" },
+  { src: "/fotos/wurzel.jpg",           alt: "Nico an einer Baumwurzel", pos: "center 22%" },
+  { src: "/fotos/zelt-see.jpg",         alt: "Nico am Zelt am See",      pos: "center 35%" },
 ];
 
 const rightPhotos = [
-  { src: "/fotos/kiefernwald-koda.jpg", alt: "Nico mit Koda im Kiefernwald" },
-  { src: "/fotos/rucksack-huegel.jpg", alt: "Nico mit Rucksack auf dem Hügel" },
-  { src: "/fotos/gipfel-stadt.jpg", alt: "Nico mit Blick über die Stadt" },
+  { src: "/fotos/kiefernwald-koda.jpg", alt: "Nico mit Koda im Kiefernwald", pos: "center 20%" },
+  { src: "/fotos/rucksack-huegel.jpg",  alt: "Nico mit Rucksack auf dem Hügel", pos: "center 15%" },
+  { src: "/fotos/gipfel-stadt.jpg",     alt: "Nico mit Blick über die Stadt",   pos: "center 25%" },
 ];
 
 const paragraphs = [
@@ -45,7 +45,8 @@ export default function WarumIch() {
 
         <div className={`${s.photoCol} ${s.left} w-left`}>
           {leftPhotos.map((p) => (
-            <img key={p.src} src={p.src} alt={p.alt} className={s.photo} />
+            <img key={p.src} src={p.src} alt={p.alt} className={s.photo}
+              style={{ objectPosition: p.pos }} />
           ))}
         </div>
 
@@ -66,7 +67,8 @@ export default function WarumIch() {
 
         <div className={`${s.photoCol} ${s.right} w-right`}>
           {rightPhotos.map((p) => (
-            <img key={p.src} src={p.src} alt={p.alt} className={s.photo} />
+            <img key={p.src} src={p.src} alt={p.alt} className={s.photo}
+              style={{ objectPosition: p.pos }} />
           ))}
         </div>
 

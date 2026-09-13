@@ -7,16 +7,6 @@ import s from "./UeberMich.module.css";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const leftPhotos = [
-  { src: "/fotos/bank-stadt.jpg", alt: "Nico in der Stadt", style: { width: "66%" } },
-  { src: "/fotos/shaker-freisteller.png", alt: "Nico mit Shaker", style: { width: "72%", marginLeft: "5%", objectFit: "contain" as const } },
-];
-
-const rightPhotos = [
-  { src: "/fotos/koda-freisteller.png", alt: "Koda", style: { width: "74%", marginLeft: "auto", objectFit: "contain" as const } },
-  { src: "/fotos/koda-nico.jpg", alt: "Nico und Koda", style: { width: "60%" } },
-];
-
 const listItems = [
   "🏃 Laufen und Calisthenics im Freien",
   "🌲 Wald und See vor der Haustür",
@@ -44,10 +34,14 @@ export default function UeberMich() {
     <section id="ueber-mich" className={s.section} ref={ref}>
       <div className={s.grid}>
 
+        {/* Left: one rectangular photo */}
         <div className={`${s.photoCol} ${s.left} u-left`}>
-          {leftPhotos.map((p) => (
-            <img key={p.src} src={p.src} alt={p.alt} className={s.photo} style={p.style} />
-          ))}
+          <img
+            src="/fotos/bank-stadt.jpg"
+            alt="Nico in der Stadt"
+            className={s.photo}
+            style={{ objectPosition: "center 25%" }}
+          />
         </div>
 
         <div className={`${s.textCol} u-text`}>
@@ -60,10 +54,14 @@ export default function UeberMich() {
           </ul>
         </div>
 
+        {/* Right: one rectangular photo */}
         <div className={`${s.photoCol} ${s.right} u-right`}>
-          {rightPhotos.map((p) => (
-            <img key={p.src} src={p.src} alt={p.alt} className={s.photo} style={p.style} />
-          ))}
+          <img
+            src="/fotos/koda-nico.jpg"
+            alt="Nico und Koda"
+            className={s.photo}
+            style={{ objectPosition: "center 30%" }}
+          />
         </div>
 
       </div>

@@ -17,6 +17,14 @@ export default function Kontakt() {
         stagger: 0.12,
         scrollTrigger: { trigger: ".k-item", start: "top 80%", once: true },
       });
+      gsap.from(".k-fr-left", {
+        x: -50, opacity: 0, duration: 1, ease: "power3.out",
+        scrollTrigger: { trigger: ".k-fr-left", start: "top 90%", once: true },
+      });
+      gsap.from(".k-fr-right", {
+        x: 50, opacity: 0, duration: 1, ease: "power3.out",
+        scrollTrigger: { trigger: ".k-fr-right", start: "top 90%", once: true },
+      });
     },
     { scope: ref }
   );
@@ -39,6 +47,20 @@ export default function Kontakt() {
             @kodafromgreece
           </a>
         </div>
+      </div>
+
+      {/* Freisteller-Cutouts — floating below the buttons like a signature element */}
+      <div className={s.freisteller}>
+        <img
+          src="/fotos/shaker-freisteller.png"
+          alt="Nico mit Shaker"
+          className={`${s.frLeft} k-fr-left`}
+        />
+        <img
+          src="/fotos/koda-freisteller.png"
+          alt="Koda"
+          className={`${s.frRight} k-fr-right`}
+        />
       </div>
     </section>
   );

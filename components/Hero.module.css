@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 6vh;
 }
 
 .bg {
@@ -16,7 +15,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 48%;
+  object-position: 50% 35%;
   z-index: 0;
 }
 
@@ -25,9 +24,10 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(26, 32, 19, 0.58),
-    rgba(26, 32, 19, 0.58) 45%,
-    rgba(26, 32, 19, 0.85)
+    rgba(26, 32, 19, 0.45) 0%,
+    rgba(26, 32, 19, 0.35) 40%,
+    rgba(26, 32, 19, 0.82) 80%,
+    rgba(26, 32, 19, 0.92) 100%
   );
   z-index: 1;
 }
@@ -72,3 +72,21 @@
   transition: background 0.2s, transform 0.15s;
 }
 .cta:hover { background: var(--sage); transform: scale(1.02); }
+
+/* Mobile: text sinks to bottom so face is visible above */
+@media (max-width: 860px) {
+  .hero {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .content {
+    padding-bottom: 52px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+  .bg {
+    /* show upper body / landscape — face in upper half, text safe below */
+    object-position: 50% 28%;
+  }
+}
