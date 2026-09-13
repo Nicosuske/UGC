@@ -9,12 +9,12 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const leftPhotos = [
   { src: "/fotos/wandern-aufstieg.jpg", alt: "Nico beim Aufstieg" },
-  { src: "/fotos/wurzel.jpg", alt: "Nico an einer Baumwurzel", style: { marginLeft: "auto", width: "212px" } },
+  { src: "/fotos/wurzel.jpg", alt: "Nico an einer Baumwurzel" },
   { src: "/fotos/zelt-see.jpg", alt: "Nico am Zelt am See" },
 ];
 
 const rightPhotos = [
-  { src: "/fotos/kiefernwald-koda.jpg", alt: "Nico mit Koda im Kiefernwald", style: { marginLeft: "auto", marginTop: "48px", width: "68%" } },
+  { src: "/fotos/kiefernwald-koda.jpg", alt: "Nico mit Koda im Kiefernwald" },
   { src: "/fotos/rucksack-huegel.jpg", alt: "Nico mit Rucksack auf dem Hügel" },
   { src: "/fotos/gipfel-stadt.jpg", alt: "Nico mit Blick über die Stadt" },
 ];
@@ -45,7 +45,7 @@ export default function WarumIch() {
 
         <div className={`${s.photoCol} ${s.left} w-left`}>
           {leftPhotos.map((p) => (
-            <img key={p.src} src={p.src} alt={p.alt} className={s.photo} style={p.style as React.CSSProperties} />
+            <img key={p.src} src={p.src} alt={p.alt} className={s.photo} />
           ))}
         </div>
 
@@ -66,7 +66,7 @@ export default function WarumIch() {
 
         <div className={`${s.photoCol} ${s.right} w-right`}>
           {rightPhotos.map((p) => (
-            <img key={p.src} src={p.src} alt={p.alt} className={s.photo} style={p.style as React.CSSProperties} />
+            <img key={p.src} src={p.src} alt={p.alt} className={s.photo} />
           ))}
         </div>
 
