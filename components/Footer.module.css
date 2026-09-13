@@ -1,0 +1,47 @@
+.footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(244, 239, 224, 0.12);
+  padding: 56px 24px;
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.brand {
+  font-family: var(--font-anton), sans-serif;
+  font-size: clamp(28px, 3vw, 44px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.tagline { font-size: 17px; color: var(--paper); }
+
+.email {
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+.email:hover { color: var(--sage); }
+
+.socials { display: flex; gap: 18px; align-items: center; }
+
+.icon { color: var(--paper); display: flex; transition: color 0.15s; }
+.icon:hover { color: var(--sage); }
+
+.legal {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: rgba(232, 221, 192, 0.6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.legal a:hover { color: var(--sage); }

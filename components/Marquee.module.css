@@ -1,0 +1,23 @@
+.bar {
+  background: var(--sage);
+  color: var(--ink);
+  padding: 22px 0;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  font-family: var(--font-anton), sans-serif;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 640px) {
+  .track { font-size: 22px; }
+}
